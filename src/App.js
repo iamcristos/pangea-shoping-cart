@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { useQuery, useLazyQuery } from '@apollo/client';
 
@@ -9,6 +10,7 @@ import Cart from './components/Cart';
 // Global Font
 import GlobalFont from './fonts/fonts';
 import AppSpinner from './components/AppSpinner';
+import ErrorPage from './Views/ErrorPage';
 
 function App() {
   const [ currencyValue, setCurrency ] = useState('USD')
@@ -91,6 +93,7 @@ function App() {
   return (
     <>
       <GlobalFont />
+      {error && <ErrorPage />}
       {loading && loadingCurrency ? (
         <AppSpinner />
       ) : (
