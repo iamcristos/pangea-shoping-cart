@@ -169,8 +169,8 @@ export const CartContentWrapper = styled.div`
 
 export const CartContent = styled.div`
   display: flex;
-  justify-content: 'space-between';
-  padding: '5px';
+  justify-content: space-between;
+  padding: 5px;
   @media only screen and (max-width: 550px) {
     flex-direction: column;
     justify-content: center;
