@@ -1,5 +1,5 @@
 import React from 'react';
-import { CartCard, Btn, ControlDiv, CartImage } from './Styles';
+import { CartCard, Btn, ControlDiv, CartImage, CartContent } from './Styles';
 
 function CartItem({carts, removeCart, addCart, deleteCart}) {
     return (
@@ -10,7 +10,7 @@ function CartItem({carts, removeCart, addCart, deleteCart}) {
                 <p>{cart.title}</p>
                 <div onClick={() => deleteCart(cart)} data-testid="removeCart">X</div>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', padding: '5px'}}>
+            <CartContent>
                 <ControlDiv>
                     <Btn onClick={() => removeCart(cart)} data-testid="deleteCount">-</Btn>
                     <p>{cart.count}</p>
@@ -18,7 +18,7 @@ function CartItem({carts, removeCart, addCart, deleteCart}) {
                 </ControlDiv>
                 <p>{cart.price}</p>
                 <CartImage src={cart.image_url}  alt={cart.title}/>
-            </div>
+            </CartContent>
         </CartCard>
 
         ))}

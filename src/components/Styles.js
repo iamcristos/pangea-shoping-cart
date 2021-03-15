@@ -64,6 +64,7 @@ export const CartCard = styled.div`
     width: 90%;
     padding: 5px;
     margin: 10px -5px;
+    
   div {
     p, div {
       font-family: 'bau-regular';
@@ -111,8 +112,14 @@ export const Header = styled.header`
   justify-content: space-between;
   width: 50%;
   align-items: center;
+  @media only screen and (max-width: 550px) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
   p {
-    /* margin-left: 1px; */
+    @media only screen and (max-width: 550px) {
+    font-size: 12px;
+  }
   }
   span {
     border-radius: 50%;
@@ -147,7 +154,8 @@ export const CartImage = styled.img`
   width: 20px;
 `;
 
-export const CartTop = styled.div``;
+export const CartTop = styled.div`
+`;
 
 export const CartBottom = styled.div`
 margin-bottom: 25px;
@@ -158,3 +166,14 @@ export const CartContentWrapper = styled.div`
   flex-direction: column;
   flex: 1 auto;
 `;
+
+export const CartContent = styled.div`
+  display: flex;
+  justify-content: 'space-between';
+  padding: '5px';
+  @media only screen and (max-width: 550px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`
