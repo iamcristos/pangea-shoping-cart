@@ -103,9 +103,10 @@ function App() {
           carts={cart}
           handleClose={handleClose}
           deleteCart={deleteCart}
-          currency={currency}
+          currency={currency?.currency}
           changeCurrency={changeCurrency}
           currencyValue={currencyValue}
+          loading={loading}
         />
       </Modal>
     </>

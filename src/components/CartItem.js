@@ -8,13 +8,13 @@ function CartItem({carts, removeCart, addCart, deleteCart}) {
         <CartCard key={cart.id}>
             <div style={{ display: 'flex', justifyContent: 'space-between', padding: '5px'}}>
                 <p>{cart.title}</p>
-                <div onClick={() => deleteCart(cart)}>X</div>
+                <div onClick={() => deleteCart(cart)} data-testid="removeCart">X</div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', padding: '5px'}}>
                 <ControlDiv>
-                    <Btn onClick={() => removeCart(cart)}>-</Btn>
+                    <Btn onClick={() => removeCart(cart)} data-testid="deleteCount">-</Btn>
                     <p>{cart.count}</p>
-                    <Btn onClick={() => addCart(cart)}>+</Btn>
+                    <Btn onClick={() => addCart(cart)} data-testid="addCount">+</Btn>
                 </ControlDiv>
                 <p>{cart.price}</p>
                 <CartImage src={cart.image_url}  alt={cart.title}/>

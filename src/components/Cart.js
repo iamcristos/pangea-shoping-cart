@@ -12,6 +12,7 @@ import {
   PriceContainer,
 } from './Styles';
 import BackArrow from '../Icons/BackArrow';
+import AppSpinner from './AppSpinner';
 
 function Cart(props) {
   return (
@@ -23,12 +24,13 @@ function Cart(props) {
         <p>YOUR CART</p>
       </Header>
       <Container>
-        <select name={props.currencyValue} id={props.currencyValue} onChange={props.changeCurrency}>
-          {props.currency.currency.map((currency) => (
+        <select name={props.currencyValue} id={props.currencyValue} onChange={props.changeCurrency} data-testid="select">
+          {props.currency.map((currency) => (
             <option value={currency} key={currency} selected={props.currencyValue === currency}>{currency}</option>
           ))}
         </select>
       </Container>
+      {props.loading ? <AppSpinner /> :(
       <CartContentWrapper>
         <CartTop>
         <CartItem {...props} />
@@ -43,6 +45,7 @@ function Cart(props) {
           </Container>
         </CartBottom>
       </CartContentWrapper>
+      )}
     </Container>
   );
 }
